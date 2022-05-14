@@ -186,14 +186,16 @@ rosservice call /compliance_controller/toggle_compliance "{}"
 ```
 
 # Project
-This project requires the previous steps to be run successfully, and the ROS workspace to be set up. In addition, it requires python3, numpy (python3), and matplotlib. 
+This project requires the previous steps to be run successfully, and the ROS workspace to be set up. In addition, it requires python3, numpy (python3), and matplotlib (python3). In addition, this entire repository uses an older version of xacro (1.13.0) as newer versions are not compatible with this repository. 
 
 # Terminal 1 - Launch Simulation
 ```
 roslaunch robowork_gazebo bvr_SIM_playpen.launch
 ```
+# Terminal 2 - Launch MoveIt! move_group planning
+ROS_NAMESPACE="bvr_SIM" roslaunch robowork_moveit_config robowork_moveit_planning_execution.launch robot_namespace:=bvr_SIM arm_namespace:=main_arm_SIM sim_suffix:=_SIM
 
-# Terminal 2 - Run project file
+# Terminal 3 - Run project file
 Run setup for ROS workspace, then:
 ```
 cd $HOME/autonomous_mobile_manipulation_ws/src/autonomous_mobile_manipulation && python3 project.py
