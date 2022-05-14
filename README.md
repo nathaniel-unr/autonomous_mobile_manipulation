@@ -184,3 +184,17 @@ rosservice call /compliance_controller/toggle_compliance "{}"
 
 # Move the interactive_marker_3d_twist on Rviz to command jogging references
 ```
+
+# Project
+This project requires the previous steps to be run successfully, and the ROS workspace to be set up. In addition, it requires python3, numpy (python3), and matplotlib. 
+
+# Terminal 1 - Launch Simulation
+```
+roslaunch robowork_gazebo bvr_SIM_playpen.launch
+```
+
+# Terminal 2 - Run project file
+Run setup for ROS workspace, then:
+```
+cd $HOME/autonomous_mobile_manipulation_ws/src/autonomous_mobile_manipulation && python3 project.py
+```
